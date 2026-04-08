@@ -1,0 +1,1329 @@
+:root {
+    --primary-blue: #005A9C;
+    --light-blue: #E6F0FA;
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --white: #FFFFFF;
+    --bg-gray: #F8F9FA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =========================================
+   Navbar & Menus
+   ========================================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px; 
+    width: auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    text-decoration: none; 
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 600; 
+    color: var(--primary-blue); 
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 16px; 
+    }
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 260px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1000;
+    border: 1px solid #eee;
+}
+
+.nav-links .dropdown-menu li {
+    margin: 0; 
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 15px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    transition: all 0.3s ease-in-out;
+}
+
+/* =========================================
+   General Sections
+   ========================================= */
+section {
+    padding: 100px 20px 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #004070;
+}
+
+/* =========================================
+   Modern Hero Section (หน้าแรกแบบใหม่)
+   ========================================= */
+.modern-hero {
+    padding-top: 120px;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* นำรูปพื้นหลังเดิมของคุณกลับมาใช้ */
+    background: linear-gradient(rgba(230, 240, 250, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
+    
+    position: relative;
+    overflow: hidden;
+}
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 50px;
+    z-index: 2;
+}
+.hero-text { flex: 1; text-align: left; }
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(0, 90, 156, 0.1);
+    color: var(--primary-blue);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.hero-text h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+.text-gradient {
+    background: linear-gradient(90deg, #005A9C, #00A3E0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hero-text p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 35px;
+    line-height: 1.8;
+}
+.hero-actions { display: flex; gap: 15px; }
+.btn-main {
+    padding: 14px 30px; background: var(--primary-blue); color: white;
+    text-decoration: none; border-radius: 30px; font-weight: 500;
+    transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 90, 156, 0.2);
+}
+.btn-main:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 90, 156, 0.4); }
+.btn-outline {
+    padding: 14px 30px; background: transparent; color: var(--primary-blue);
+    text-decoration: none; border-radius: 30px; border: 2px solid var(--primary-blue);
+    font-weight: 500; transition: all 0.3s ease;
+}
+.btn-outline:hover { background: var(--light-blue); }
+.hero-graphic { flex: 1; display: flex; justify-content: center; align-items: center; }
+.glowing-circle {
+    width: 250px; height: 250px; background: var(--light-blue);
+    border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    color: var(--primary-blue); box-shadow: 0 0 40px rgba(0, 163, 224, 0.3);
+    animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px); box-shadow: 0 0 40px rgba(0, 163, 224, 0.3); }
+    50% { transform: translateY(-20px); box-shadow: 0 0 60px rgba(0, 163, 224, 0.5); }
+    100% { transform: translateY(0px); box-shadow: 0 0 40px rgba(0, 163, 224, 0.3); }
+}
+@media (max-width: 768px) {
+    .hero-container { flex-direction: column; text-align: center; padding: 0 20px; }
+    .hero-text { text-align: center; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-actions { justify-content: center; }
+    .glowing-circle { width: 180px; height: 180px; margin-top: 30px; }
+}
+/* =========================================
+   Logo ตรงกลางหน้าแรก
+   ========================================= */
+.hero-logo {
+    width: 230px; /* ปรับขนาดความกว้างของโลโก้ได้ตามต้องการ */
+    height: auto;
+    margin: 0 auto 20px auto; /* จัดกึ่งกลางและเว้นระยะด้านล่าง */
+    display: block;
+    border-radius: 50%; /* โค้ดนี้จะทำให้รูปโลโก้กลม (ถ้าต้องการเป็นสี่เหลี่ยมเหมือนเดิมให้ลบบรรทัดนี้ออก) */
+    box-shadow: 0 10px 30px rgba(0, 90, 156, 0.2); /* เพิ่มเงาสีฟ้าอ่อนๆ ให้โลโก้โดดเด่น */
+    transition: transform 0.3s ease;
+}
+
+.hero-logo:hover {
+    transform: scale(1.05); /* เอาเมาส์ชี้แล้วโลโก้ขยายขึ้นนิดนึง */
+}
+/* =========================================
+   อัปเดตเอฟเฟกต์การ์ดสินค้า (ให้เด้งและเงาสวยขึ้น)
+   ========================================= */
+.product-card { transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 90, 156, 0.1);
+    border-color: var(--light-blue);
+}
+.product-card img, .product-icon { transition: transform 0.3s ease; }
+.product-card:hover .product-icon, .product-card:hover img { transform: scale(1.1); }
+
+/* =========================================
+   Category Hero Section (ส่วนหัวของหน้าหมวดหมู่สินค้า เช่น Monitor)
+   ========================================= */
+#category-hero {
+    min-height: 45vh;
+    padding-top: 130px;
+    padding-bottom: 50px;
+    /* ไล่สีโทนน้ำเงินเข้มแบบหน้าหลัก + ลายเส้นชีพจรจางๆ */
+    background-color: #003366;
+    background-image: 
+        linear-gradient(135deg, rgba(0, 30, 60, 0.9) 0%, rgba(0, 90, 156, 0.85) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='100' viewBox='0 0 300 100'%3E%3Cpath d='M0 50 h60 l10 -20 l15 60 l20 -80 l15 60 l10 -20 h170' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: cover, 400px auto;
+    background-position: center, center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* ปรับไอคอนให้เป็นสีฟ้าสว่างและมีเอฟเฟกต์เรืองแสงคล้ายหน้าจอ */
+#category-hero svg.hero-icon {
+    stroke: #40C4FF;
+    filter: drop-shadow(0 0 10px rgba(64, 196, 255, 0.5));
+    margin-bottom: 25px;
+}
+
+/* เปลี่ยนสีตัวอักษรเป็นสีขาว/สว่าง ให้ตัดกับพื้นหลังเข้ม */
+#category-hero h1 {
+    color: #ffffff !important;
+    font-size: 42px !important;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+#category-hero p {
+    color: #E1F5FE !important;
+    font-size: 1.1rem;
+    max-width: 600px;
+    line-height: 1.6;
+    font-weight: 300;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* =========================================
+   Products Section
+   ========================================= */
+#products {
+    background: var(--white);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.product-card {
+    background: var(--white);
+    border: 2px solid #eee; /* เส้นขอบปกติ */
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease-in-out; /* ปรับเป็น all เพื่อให้ทุกการเปลี่ยนแปลงสมูท */
+}
+
+/* เมื่อเอาเมาส์ชี้ (Hover) */
+.product-card:hover {
+    transform: translateY(-6px); /* ยกลอยขึ้น */
+    border: 2px solid var(--primary-blue); /* เปลี่ยนกรอบเป็นสีน้ำเงินเข้ม */
+    box-shadow: 0 12px 25px rgba(0, 90, 156, 0.15); /* เพิ่มเงาสีน้ำเงินบางๆ */
+    background-color: #F8FBFF; /* เปลี่ยนพื้นหลังเป็นสีฟ้าอ่อนมากๆ ให้ดู Active */
+}
+
+/* ทำให้ข้อความ "รายละเอียดเพิ่มเติม" ด้านล่างเปลี่ยนสีตามตอน Hover ด้วย */
+.product-card:hover div[style*="border-top"] {
+    color: #003366 !important;
+    font-weight: 600 !important;
+    border-top: 1px dashed var(--primary-blue) !important;
+}
+
+.product-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+/* =========================================
+   Help Center
+   ========================================= */
+#help {
+    background: var(--bg-gray);
+}
+
+.help-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+.faq-item {
+    background: var(--white);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-blue);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.faq-item h4 {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+/* =========================================
+   Contact Section
+   ========================================= */
+#contact {
+    background: var(--white);
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    max-width: 1000px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.contact-info, .contact-form-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info p {
+    margin-bottom: 5px; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form-container input, .contact-form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Prompt', sans-serif;
+}
+
+/* =========================================
+   Footer (Fat Footer แบบใหม่)
+   ========================================= */
+.site-footer {
+    background-color: #1c1c1c; 
+    color: #ffffff;
+    padding: 60px 50px 30px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 15px;
+}
+
+.footer-col ul li a {
+    color: #a0a0a0; 
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff; 
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #333333;
+    padding-top: 30px;
+}
+
+.footer-bottom-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.footer-contact-inline {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer-brand {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.footer-legal p {
+    color: #888888;
+    font-size: 12px;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.footer-legal a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 40px 20px 20px;
+    }
+    
+    .footer-bottom-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* =========================================
+   Modal (ป๊อปอัปแสดงรายละเอียดสินค้า)
+   ========================================= */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--white);
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    animation: modalFadeIn 0.3s;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: var(--text-dark);
+}
+
+.modal-body {
+    text-align: left;
+}
+
+.modal-img-placeholder {
+    width: 100%;
+    height: 250px;
+    background: var(--light-blue);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+
+.modal-body h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 24px;
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 10px;
+}
+
+.specs-list {
+    list-style: none;
+    margin-top: 10px;
+    color: var(--text-gray);
+}
+
+.specs-list li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+    font-size: 15px;
+}
+
+/* =========================================
+   Responsive สำหรับหน้าจอมือถือ (เล็กกว่า 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+    
+    .hamburger {
+        display: flex; 
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px; 
+        left: -100%; 
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: left;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        padding: 0;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        left: 0; 
+    }
+
+    .nav-links > li {
+        width: 100%;
+        margin: 0;
+    }
+
+    .nav-links > li > a {
+        display: block;
+        padding: 15px 30px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .dropdown-menu {
+        display: none; 
+        position: static; 
+        box-shadow: none;
+        border: none;
+        background-color: var(--bg-gray);
+        min-width: 100%;
+        border-radius: 0;
+        padding: 0;
+        animation: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .dropdown-menu a {
+        padding: 15px 30px 15px 50px; 
+        border-bottom: 1px solid #e9e9e9;
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   Mini Chat Widget (ต้องอยู่นอกสุด)
+   ========================================= */
+.chat-widget-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    
+    /* แก้ไขตรงนี้: ทำให้เป็นวงกลม */
+    width: 60px;   /* กำหนดความกว้าง */
+    height: 60px;  /* กำหนดความสูงให้เท่ากัน */
+    padding: 0;    /* เอา padding เดิมออก */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    
+    /* จัดการไอคอนให้อยู่ตรงกลาง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 9999;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* จัดขนาดไอคอน SVG ให้พอดี */
+/* จัดขนาดไอคอน ion-icon ให้พอดี */
+.chat-widget-button ion-icon {
+    font-size: 30px;   /* ขนาดไอคอน */
+    color: var(--white); /* สีไอคอนเป็นสีขาว */
+}
+.chat-widget-button:hover {
+    transform: translateY(-5px); /* ให้ลอยขึ้นนิดหน่อยเวลาชี้ */
+    background-color: #004578;   /* เปลี่ยนสีน้ำเงินให้เข้มขึ้น */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25); /* เพิ่มเงาตอนชี้ */
+}
+
+.chat-widget-window {
+    position: fixed;
+    bottom: 100px; /* ปรับให้สูงขึ้นนิดหน่อยเพื่อให้พ้นปุ่มวงกลม */
+    right: 30px;
+    width: 320px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9999;
+    border: 1px solid #eee;
+}
+
+.chat-header {
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.chat-header button {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chat-body {
+    padding: 15px;
+    height: 300px;
+    overflow-y: auto;
+    background: var(--bg-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.chat-msg {
+    max-width: 85%;
+    padding: 10px 14px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.bot-msg {
+    background: var(--white);
+    color: var(--text-dark);
+    align-self: flex-start;
+    border: 1px solid #e0e0e0;
+    border-bottom-left-radius: 2px;
+}
+
+.user-msg {
+    background: var(--light-blue);
+    color: var(--primary-blue);
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.bot-msg a {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.chat-options {
+    padding: 12px;
+    background: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-top: 1px solid #eee;
+}
+
+.chat-opt-btn {
+    background: var(--white);
+    border: 1px solid var(--primary-blue);
+    color: var(--primary-blue);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.chat-opt-btn:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .chat-widget-button {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;  
+        height: 50px;
+    }
+    /* เปลี่ยนจาก .chat-widget-button svg เป็นบรรทัดล่างนี้ครับ */
+    .chat-widget-button ion-icon {
+        font-size: 24px;  
+    }
+    .chat-widget-window {
+        bottom: 80px; 
+        right: 15px;
+        left: 15px;
+        width: auto;
+    }
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 10px;
+    background: var(--white);
+    border-top: 1px solid #eee;
+    gap: 8px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.chat-input-area input:focus {
+    border-color: var(--primary-blue);
+}
+
+.chat-input-area button {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.chat-input-area button:hover {
+    background: #004578;
+}
+
+/* =========================================
+   Manual Page (หน้าคู่มือการใช้งานที่เพิ่มเข้ามาใหม่)
+   ========================================= */
+.manual-section {
+    max-width: 1000px;
+    margin: 100px auto 50px; 
+    padding: 20px;
+}
+.manual-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.manual-header h1 {
+    color: var(--primary-blue); /* ดึงสีหลักมาใช้ */
+    font-size: 28px;
+}
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.manual-card {
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+.manual-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--primary-blue);
+    box-shadow: 0 12px 25px rgba(0, 90, 156, 0.15);
+}
+.download-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--primary-blue); /* ดึงสีหลักมาใช้ */
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+.download-btn:hover {
+    background-color: #004578; /* สีเข้มขึ้นตอนเอาเมาส์ชี้ */
+}
+/* =========================================
+   ปรับแต่งไอคอนติดต่อ (โทร, อีเมล, เวลาทำการ)
+   ========================================= */
+.contact-info p {
+    display: flex;
+    align-items: center; /* จัดให้ไอคอนกับข้อความอยู่กึ่งกลางบรรทัดเดียวกัน */
+    gap: 10px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+    margin-bottom: 15px;
+}
+
+.contact-info p ion-icon {
+    font-size: 24px; /* ขนาดของไอคอน */
+    color: var(--primary-blue); /* ใช้สีน้ำเงินหลักของเว็บ */
+    flex-shrink: 0; /* ป้องกันไม่ให้ไอคอนหดตัวถ้ายาวเกิน */
+}
+
+/* ถ้าเอาไปใส่ใน Footer ด้วย ให้เพิ่มสีไอคอนใน Footer เป็นสีขาว/เทา */
+.footer-col ul li ion-icon, 
+.footer-contact-inline ion-icon {
+    font-size: 20px;
+    color: #40C4FF; /* สีฟ้าสว่างเพื่อให้ตัดกับพื้นหลังสีดำของ Footer */
+    vertical-align: middle;
+    margin-right: 8px;
+}
+/* =========================================
+   Chatbot Avatar Styles
+   ========================================= */
+.bot-msg-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.bot-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden; /* บังคับตัดขอบให้กลมเนียน */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-blue); /* สีพื้นหลังเผื่อรูปโปร่งใส */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bot-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* บังคับให้รูปขยายเต็มกรอบและอยู่กึ่งกลางพอดี */
+    display: block;
+}
+/* =========================================
+   ปุ่มติดต่อช่องทางต่างๆ ใน Chatbot
+   ========================================= */
+.contact-link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-link-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* =========================================
+   Language Switcher & Nav Actions
+   ========================================= */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* ระยะห่างระหว่างปุ่มภาษากับแฮมเบอร์เกอร์ */
+}
+
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.lang-switcher a {
+    text-decoration: none;
+    color: var(--text-gray); /* สีเทาสำหรับภาษาที่ไม่ได้เลือก */
+    transition: color 0.3s ease;
+}
+
+.lang-switcher span {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.lang-switcher a:hover {
+    color: var(--primary-blue);
+}
+
+.lang-switcher a.active {
+    color: var(--primary-blue); /* สีน้ำเงินสำหรับภาษาปัจจุบัน */
+    font-weight: 600;
+}
+
+/* จัดการระยะห่างในหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .nav-actions {
+        gap: 15px;
+    }
+    .lang-switcher {
+        font-size: 14px;
+    }
+}
+/* =========================================
+   Manual Page (หน้าคู่มือการใช้งาน)
+   ========================================= */
+#manual-hero {
+    min-height: 40vh;
+    padding-top: 130px;
+    padding-bottom: 50px;
+    background: linear-gradient(135deg, #001e3c 0%, #005a9c 100%);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.manual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.manual-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--light-blue);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.manual-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 90, 156, 0.15);
+    border-color: var(--primary-blue);
+}
+
+.manual-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.manual-card:hover .manual-icon {
+    transform: scale(1.1);
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+.manual-card h3 {
+    font-size: 22px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.manual-card p {
+    color: var(--text-gray);
+    font-size: 15px;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: var(--light-blue);
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-download:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 90, 156, 0.2);
+}
+/* =========================================
+   FAQ / Help Accordion (กรอบคลิกเปิด-ปิด)
+   ========================================= */
+.faq-item {
+    border: 1px solid var(--light-blue);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background: var(--white);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 90, 156, 0.1);
+}
+
+.faq-header {
+    padding: 18px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    transition: background 0.3s ease;
+}
+
+.faq-header:hover {
+    background-color: var(--bg-gray);
+}
+
+.faq-header h4 {
+    margin: 0;
+    color: var(--primary-blue);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.faq-icon {
+    font-size: 24px;
+    color: var(--primary-blue);
+    transition: transform 0.3s ease;
+    line-height: 1;
+}
+
+.faq-content {
+    max-height: 0; /* ซ่อนเนื้อหาไว้ตอนเริ่มต้น */
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: var(--bg-gray);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+/* คลาส .active จะถูกเติมด้วย Javascript เมื่อคลิก */
+.faq-item.active .faq-content {
+    max-height: 500px; /* ความสูงสูงสุดเมื่อเปิด (ปรับเพิ่มได้ถ้าเนื้อหาเยอะ) */
+    padding: 20px;
+    opacity: 1;
+    border-top: 1px solid var(--light-blue);
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* หมุนเครื่องหมาย + ให้กลายเป็น x */
+}
+/* =========================================
+   Manual Model List (รายการรุ่นในหน้าคู่มือ)
+   ========================================= */
+.model-list {
+    width: 100%;
+    margin-top: auto; /* ดันให้อยู่ด้านล่างสุดของการ์ด */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.model-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-gray);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--light-blue);
+    transition: all 0.2s ease;
+}
+
+.model-item:hover {
+    border-color: var(--primary-blue);
+    background: var(--white);
+}
+
+.model-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: left;
+}
+
+.btn-download-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background: var(--light-blue);
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-download-sm:hover {
+    background: var(--primary-blue);
+    color: var(--white);
+}
+
+/* =========================================
+   Active Menu State (ไฮไลท์เมนูหน้าปัจจุบัน)
+   ========================================= */
+
+/* สำหรับเมนูหลักบนแถบ Nav */
+.nav-links > li > a.active-menu {
+    color: var(--primary-blue) !important;
+    font-weight: 600 !important;
+    position: relative;
+}
+
+/* เพิ่มเส้นใต้สวยๆ ใต้เมนูหลักที่ Active */
+.nav-links > li > a.active-menu::after {
+    content: '';
+    position: absolute;
+    bottom: -6px; /* ระยะห่างของเส้นใต้ */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+
+/* สำหรับเมนูย่อยใน Dropdown ที่ Active */
+.dropdown-menu a.active-menu {
+    background-color: var(--light-blue) !important;
+    color: var(--primary-blue) !important;
+    font-weight: 600 !important;
+    border-radius: 6px;
+}

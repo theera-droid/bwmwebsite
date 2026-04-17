@@ -40,7 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --------------------------------------------------
-    // 3. ระบบส่งอีเมล Formspree แบบไม่เปลี่ยนหน้า (AJAX)
+    // 3. ระบบแจ้งเตือนฟอร์มติดต่อเรา
+    // --------------------------------------------------
+    // --------------------------------------------------
+    // ระบบส่งอีเมล Formspree แบบไม่เปลี่ยนหน้า (AJAX)
     // --------------------------------------------------
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
@@ -85,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.disabled = false;
         });
     }
-
     // --------------------------------------------------
     // 4. ระบบเปิด PDF หรือ Modal สำหรับดูสเปคสินค้า
     // --------------------------------------------------
@@ -178,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --------------------------------------------------
-    // 5. ระบบ เปิด-ปิด แชท
+    // ระบบ เปิด-ปิด แชท (อยู่ใน DOMContentLoaded)
     // --------------------------------------------------
     const chatBtn = document.getElementById('chatWidgetBtn');
     const chatWindow = document.getElementById('chatWidgetWindow');
@@ -204,44 +206,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.key === 'Enter') sendUserMessage();
         });
     }
-
-    // --------------------------------------------------
-    // 6. ระบบไฮไลท์เมนูอัตโนมัติเมื่อเลื่อนหน้าจอ (Optimized Version)
-    // --------------------------------------------------
-    // ค้นหาเมนูและเนื้อหาเตรียมไว้เลยตั้งแต่เว็บโหลดเสร็จ (ลดอาการหน่วง)
-    const sections = document.querySelectorAll('section[id], div[id], header[id]');
-    const navLinksArray = document.querySelectorAll('.nav-links li a'); // เปลี่ยนชื่อตัวแปรกันซ้ำกับด้านบน
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        const scrollY = window.scrollY;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            
-            // ปรับระยะเผื่อตรงนี้ เปลี่ยนจาก 120 เป็น 250 
-            // (แปลว่าไม่ต้องรอให้ถึงขอบบนสุด แค่โผล่มานิดนึงก็เปลี่ยนเมนูให้เลย)
-            if (scrollY >= (sectionTop - 250)) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        if (current) {
-            navLinksArray.forEach(link => {
-                // เอาเส้นใต้อันเก่าออก
-                link.classList.remove('active-menu');
-                
-                // ใส่เส้นใต้อันใหม่ทันทีที่เจอ
-                const href = link.getAttribute('href');
-                if (href && href.includes('#' + current)) {
-                    link.classList.add('active-menu');
-                }
-            });
-        }
-    });
-
-    // ให้ทำงานทันที 1 ครั้งตอนโหลดหน้า
-    window.dispatchEvent(new Event('scroll'));
 
 }); // <--- ปิดวงเล็บของ DOMContentLoaded (ห้ามลบเด็ดขาด)
 
@@ -277,7 +241,7 @@ function getBotResponse(userText) {
                     <button class="chat-opt-btn" onclick="selectChatOption('Defibrillator')">5. Defibrillator</button>
                     <button class="chat-opt-btn" onclick="selectChatOption('Infusion Pump')">6. Infusion Pump</button>
                     <button class="chat-opt-btn" onclick="selectChatOption('Ventilator')">7. Ventilator</button>
-                    <button class="chat-opt-btn" onclick="selectChatOption('Blood Pressure Monitor')">8. Blood Pressure Monitor</button>
+                    <button class="chat-opt-btn" onclick="selectChatOption('Blood Pressure')">8. Blood Pressure</button>
                     <button class="chat-opt-btn" onclick="selectChatOption('ย้อนกลับ')" style="background: #f0f0f0; color: #333;">⬅️ กลับเมนูหลัก</button>
                 </div>`;
     }
@@ -285,7 +249,7 @@ function getBotResponse(userText) {
     else if (text.includes("fetal") || text.includes("มอนิเตอร์เด็ก")) {
         return `ดูรายละเอียด สเปค และรุ่นต่างๆ ของ <b>Fetal Monitor</b> ได้ที่นี่ครับ 👉 <a href="fetal.html">คลิกดูสินค้ารุ่นต่างๆ</a><br><br><button class="chat-opt-btn" onclick="selectChatOption('ย้อนกลับ')" style="background: #f0f0f0; color: #333; padding: 5px; font-size: 13px;">⬅️ กลับเมนูหลัก</button>`;
     }
-    else if (text.includes("patient") || text.includes("มอนิเตอร์")) {
+    else if (text.includes("monitor") || text.includes("มอนิเตอร์")) {
         return `ดูรายละเอียด สเปค และรุ่นต่างๆ ของ <b>Patient Monitor</b> ได้ที่นี่ครับ 👉 <a href="monitor.html">คลิกดูสินค้ารุ่นต่างๆ</a><br><br><button class="chat-opt-btn" onclick="selectChatOption('ย้อนกลับ')" style="background: #f0f0f0; color: #333; padding: 5px; font-size: 13px;">⬅️ กลับเมนูหลัก</button>`;
     }
     else if (text.includes("vital")) {
@@ -398,8 +362,7 @@ function selectChatOption(optionText) {
         chatBody.scrollTop = chatBody.scrollHeight;
     }, 800);
 }
-
-// 4. ฟังก์ชันสำหรับเปิด-ปิดกรอบ FAQ
+// ฟังก์ชันสำหรับเปิด-ปิดกรอบ FAQ
 function toggleFaq(element) {
     // หา div ที่ครอบปุ่มนี้อยู่ (คือ .faq-item)
     const faqItem = element.parentElement;
@@ -418,3 +381,41 @@ function toggleFaq(element) {
         faqItem.classList.remove('active'); // ถ้าเปิดอยู่ ให้เอาออก (เพื่อปิด)
     }
 }
+// --------------------------------------------------
+    // ระบบไฮไลท์เมนูอัตโนมัติเมื่อเลื่อนหน้าจอ (Optimized Version)
+    // --------------------------------------------------
+    // 1. ค้นหาเมนูและเนื้อหาเตรียมไว้เลยตั้งแต่เว็บโหลดเสร็จ (ลดอาการหน่วง)
+    const sections = document.querySelectorAll('section[id], div[id], header[id]');
+    const navLinks = document.querySelectorAll('.nav-links li a');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollY = window.scrollY;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            
+            // 2. ปรับระยะเผื่อตรงนี้! เปลี่ยนจาก 120 เป็น 250 
+            // (แปลว่าไม่ต้องรอให้ถึงขอบบนสุด แค่โผล่มานิดนึงก็เปลี่ยนเมนูให้เลย)
+            if (scrollY >= (sectionTop - 250)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        if (current) {
+            navLinks.forEach(link => {
+                // เอาเส้นใต้อันเก่าออก
+                link.classList.remove('active-menu');
+                
+                // ใส่เส้นใต้อันใหม่ทันทีที่เจอ
+                const href = link.getAttribute('href');
+                if (href && href.includes('#' + current)) {
+                    link.classList.add('active-menu');
+                }
+            });
+        }
+    });
+
+    // ให้ทำงานทันที 1 ครั้งตอนโหลดหน้า
+    window.dispatchEvent(new Event('scroll'));
+

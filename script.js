@@ -279,7 +279,7 @@ function getBotResponse(userText) {
     else if (text.includes("แอดมิน")) {
         return `สำหรับสอบถามข้อมูลทั่วไป แจ้งปัญหา หรือสอบถามสถานะสินค้า ติดต่อแอดมินได้เลยครับ 👇<br><br>
                 📞 โทร : <a href="tel:0841424140">084-142-4140</a><br>
-                <img src="asset/img/line.png" alt="LINE" style="width: 20px; height: 20px;"> <a href="https://line.me/ti/p/~YOUR_LINE_ID" target="_blank">เพิ่มเพื่อนใน LINE</a><br>
+                <img src="asset/img/line.png" alt="LINE" style="width: 20px; height: 20px;"> <a href="https://line.me/ti/p/bwm2531 target="_blank">เพิ่มเพื่อนใน LINE</a><br>
                 <img src="asset/img/mail.png" alt="mail" style="width: 20px; height: 20px;"> <a href="mailto:beworldmedical@gmail.com">คลิกเพื่อติดต่อทางอีเมล</a><br>
                 📍 แผนที่: <a href="https://www.google.com/maps/search/?api=1&query=25/31+หมู่ที่+12+ต.บึงคำพร้อม+อ.ลำลูกกา+จ.ปทุมธานี+12150" target="_blank">คลิกเพื่อเปิด Google Maps</a>
                 <br><br><button class="chat-opt-btn" onclick="selectChatOption('ย้อนกลับ')" style="background: #f0f0f0; color: #333; padding: 5px; font-size: 13px;">⬅️ กลับเมนูหลัก</button>`;
@@ -288,8 +288,8 @@ function getBotResponse(userText) {
     // 2.2 ลูกค้ากดเลือก ช่าง (ต้องเช็คคำว่า 'ช่าง' ก่อน 'ติดต่อ')
     else if (text.includes("ช่าง") || text.includes("ซ่อม") || text.includes("เสีย") || text.includes("เคลม")) {
         return `สำหรับการแจ้งซ่อม เคลมสินค้า หรือปรึกษาปัญหาการใช้งาน แจ้งทีมช่างโดยตรงที่ช่องทางนี้เลยครับ 👇<br><br>
-                📞 โทร : <a href="tel:0841424140">084-142-4140</a><br>
-                <img src="asset/img/line.png" alt="LINE" style="width: 20px; height: 20px;"> <a href="https://line.me/ti/p/~YOUR_LINE_ID" target="_blank">เพิ่มเพื่อนใน LINE</a><br>
+                📞 โทร : <a href="tel:0811736470">081-173-6470</a><br>
+                <img src="asset/img/line.png" alt="LINE" style="width: 20px; height: 20px;"> <a href="https://line.me/ti/p/servicebwm" target="_blank">เพิ่มเพื่อนใน LINE</a><br>
                 <img src="asset/img/mail.png" alt="mail" style="width: 20px; height: 20px;"> <a href="mailto:beworldmedical@gmail.com">คลิกเพื่อติดต่อทางอีเมล</a><br>
                 📍 แผนที่: <a href="https://www.google.com/maps/search/?api=1&query=25/31+หมู่ที่+12+ต.บึงคำพร้อม+อ.ลำลูกกา+จ.ปทุมธานี+12150" target="_blank">คลิกเพื่อเปิด Google Maps</a>
                 <br><br><button class="chat-opt-btn" onclick="selectChatOption('ย้อนกลับ')" style="background: #f0f0f0; color: #333; padding: 5px; font-size: 13px;">⬅️ กลับเมนูหลัก</button>`;

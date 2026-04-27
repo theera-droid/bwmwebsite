@@ -1302,22 +1302,21 @@ section {
    ========================================= */
 
 /* สำหรับเมนูหลักบนแถบ Nav */
+/* คลาสที่จะถูกเติมเข้าไปเมื่อเลื่อนถึง Section นั้น */
 .nav-links > li > a.active-menu {
     color: var(--primary-blue) !important;
     font-weight: 600 !important;
     position: relative;
 }
 
-/* เพิ่มเส้นใต้สวยๆ ใต้เมนูหลักที่ Active */
 .nav-links > li > a.active-menu::after {
     content: '';
     position: absolute;
-    bottom: -6px; /* ระยะห่างของเส้นใต้ */
+    bottom: -5px;
     left: 0;
     width: 100%;
     height: 2px;
     background-color: var(--primary-blue);
-    border-radius: 2px;
 }
 
 /* สำหรับเมนูย่อยใน Dropdown ที่ Active */
@@ -1326,4 +1325,23 @@ section {
     color: var(--primary-blue) !important;
     font-weight: 600 !important;
     border-radius: 6px;
+}
+
+/* =========================================
+   Scroll-to-Top Button (ปุ่มเลื่อนขึ้นด้านบน)
+   ========================================= */ 
+/* ส่วนของ Home / Hero Section */
+#home {
+    min-height: 100vh; /* ทำให้สูงอย่างน้อยเต็มหน้าจอพอดี */
+    display: flex;
+    align-items: center;    /* จัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวนอน */
+    padding-top: 80px;      /* เว้นระยะด้านบนหลบ Navbar (ปรับตามความสูงของ Nav คุณ) */
+    box-sizing: border-box;
+}
+
+/* ถ้ามีรูปพื้นหลัง ให้ใส่แบบนี้เพื่อให้รูปเต็มพอดี */
+.hero-container { 
+    width: 100%;
+    /* ตกแต่งเพิ่มเติมตามต้องการ */
 }

@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: 'สำเร็จ',
                         text: uiText[currentLang].formSuccess,
                         confirmButtonColor: '#005A9C',
-                        timer: 1000,
+                        timer: 2000,
                         showConfirmButton: false
                     });
 

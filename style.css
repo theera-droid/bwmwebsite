@@ -9,7 +9,9 @@
 
 * {
     margin: 0;
+    /* เพิ่มบรรทัดนี้ */
     padding: 0;
+    /* เพิ่มบรรทัดนี้ */
     box-sizing: border-box;
     font-family: 'Prompt', sans-serif;
 }
@@ -19,6 +21,10 @@ html {
 }
 
 body {
+    margin: 0;
+    /* เพิ่มบรรทัดนี้เพื่อกำจัดช่องว่างรอบนอกสุด */
+    padding: 0;
+    /* เพิ่มบรรทัดนี้ด้วยเพื่อความชัวร์ */
     color: var(--text-dark);
     line-height: 1.6;
 }
@@ -29,13 +35,20 @@ body {
 nav {
     position: fixed;
     top: 0;
+    left: 0;
+    /* ต้องมี */
+    right: 0;
+    /* ต้องมี */
     width: 100%;
+    margin: 0;
+    /* เพิ่มบรรทัดนี้ */
     background: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
+    padding: 10px 20px;
+    /* ปรับ padding จาก 50px เป็น % จะช่วยเรื่อง Responsive ได้ดีกว่า */
     z-index: 1000;
 }
 
@@ -209,6 +222,7 @@ section {
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 40px;
     gap: 50px;
@@ -328,7 +342,7 @@ section {
 @media (max-width: 768px) {
     .hero-container {
         /* สลับเอาลำดับล่าง (รูปภาพ) ขึ้นไปไว้ข้างบน */
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse;
         text-align: center;
         gap: 30px;
         padding-top: 20px;
@@ -336,7 +350,8 @@ section {
 
     .hero-graphic {
         width: 100%;
-        max-width: 300px; /* ปรับขนาดรูปให้พอดีในมือถือ */
+        max-width: 300px;
+        /* ปรับขนาดรูปให้พอดีในมือถือ */
         margin: 0 auto;
     }
 
@@ -344,7 +359,8 @@ section {
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center; /* จัด Badge และข้อความให้อยู่ตรงกลาง */
+        align-items: center;
+        /* จัด Badge และข้อความให้อยู่ตรงกลาง */
     }
 
     .hero-text h1 {
@@ -356,8 +372,9 @@ section {
     }
 
     .modern-hero {
-        padding-top: 120px; 
-    }   
+        padding-top: 120px;
+    }
+
     .glowing-circle {
         width: 180px;
         height: 180px;
@@ -388,18 +405,8 @@ section {
 }
 
 /* =========================================
-   อัปเดตเอฟเฟกต์การ์ดสินค้า (ให้เด้งและเงาสวยขึ้น)
+   Product Card Effects
    ========================================= */
-.product-card {
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 90, 156, 0.1);
-    border-color: var(--light-blue);
-}
-
 .product-card img,
 .product-icon {
     transition: transform 0.3s ease;
@@ -478,28 +485,20 @@ section {
 .product-card {
     background: var(--white);
     border: 2px solid #eee;
-    /* เส้นขอบปกติ */
     border-radius: 12px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    transition: all 0.3s ease-in-out;
-    /* ปรับเป็น all เพื่อให้ทุกการเปลี่ยนแปลงสมูท */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* เมื่อเอาเมาส์ชี้ (Hover) */
 .product-card:hover {
     transform: translateY(-6px);
-    /* ยกลอยขึ้น */
-    border: 2px solid var(--primary-blue);
-    /* เปลี่ยนกรอบเป็นสีน้ำเงินเข้ม */
+    border-color: var(--primary-blue);
     box-shadow: 0 12px 25px rgba(0, 90, 156, 0.15);
-    /* เพิ่มเงาสีน้ำเงินบางๆ */
     background-color: #F8FBFF;
-    /* เปลี่ยนพื้นหลังเป็นสีฟ้าอ่อนมากๆ ให้ดู Active */
 }
 
-/* ทำให้ข้อความ "รายละเอียดเพิ่มเติม" ด้านล่างเปลี่ยนสีตามตอน Hover ด้วย */
 .product-card:hover div[style*="border-top"] {
     color: #003366 !important;
     font-weight: 600 !important;
@@ -536,78 +535,6 @@ section {
 }
 
 /* ดีไซน์กล่องคำถาม */
-.faq-item {
-    background: var(--white);
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary-blue);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-    overflow: hidden;
-    /* จำเป็นสำหรับซ่อนเนื้อหา Accordion */
-    transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-    box-shadow: 0 6px 15px rgba(0, 90, 156, 0.1);
-    transform: translateY(-2px);
-    /* ลอยขึ้นนิดๆ ตอนเอาเมาส์ชี้ */
-}
-
-/* ส่วนหัวที่กดได้ */
-.faq-header {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.faq-header:hover {
-    background: #fcfcfc;
-}
-
-.faq-header h4 {
-    margin: 0;
-    color: var(--text-dark);
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.faq-icon {
-    font-size: 24px;
-    color: var(--primary-blue);
-    font-weight: 400;
-    transition: transform 0.3s ease;
-    /* เอฟเฟกต์หมุนไอคอน */
-}
-
-/* ส่วนเนื้อหาคำตอบ (ค่าเริ่มต้นคือซ่อนไว้) */
-.faq-content {
-    padding: 0 20px;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    color: var(--text-gray);
-    font-size: 15px;
-}
-
-/* คลาสที่จะถูกเพิ่มเข้ามาตอนกดคลิกเปิด */
-.faq-item.active .faq-content {
-    padding: 0 20px 20px 20px;
-    max-height: 300px;
-    /* ให้พื้นที่พอสำหรับคำตอบ */
-    opacity: 1;
-}
-
-.faq-item.active .faq-icon {
-    transform: rotate(45deg);
-    /* หมุนเครื่องหมาย + เป็น x */
-    color: #ff4d4f;
-    /* เปลี่ยนสีตอนเปิดเป็นสีแดง/เทาตามชอบ */
-}
-
 /* กล่อง CTA ติดต่อเราด้านล่าง */
 .help-cta {
     max-width: 800px;
@@ -650,13 +577,6 @@ section {
 .contact-form-container {
     flex: 1;
     min-width: 300px;
-}
-
-.contact-info p {
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .contact-form-container input,
@@ -762,17 +682,6 @@ section {
     text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-    .site-footer {
-        padding: 40px 20px 20px;
-    }
-
-    .footer-bottom-top {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
 /* =========================================
    Modal (ป๊อปอัปแสดงรายละเอียดสินค้า)
    ========================================= */
@@ -873,7 +782,21 @@ section {
    ========================================= */
 @media (max-width: 768px) {
     nav {
-        padding: 15px 20px;
+        padding: 10px 20px;
+    }
+
+    .site-footer {
+        padding: 40px 20px 20px;
+        text-align: center;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom-top {
+        flex-direction: column;
+        align-items: center;
     }
 
     .hamburger {
@@ -882,20 +805,33 @@ section {
 
     .nav-links {
         position: absolute;
-        top: 70px;
-        left: -100%;
+        top: 100%;
+        /* ✅ ชิด nav */
+        left: 0;
+        /* ✅ เอา -100% ออก */
+
         flex-direction: column;
         background-color: var(--white);
         width: 100%;
         text-align: left;
-        transition: 0.3s;
+
+        transform: translateY(-20px);
+        /* ✅ ซ่อนด้านบน */
+        opacity: 0;
+        pointer-events: none;
+
+        transition: all 0.3s ease;
+
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
         padding: 0;
         gap: 0;
     }
 
     .nav-links.active {
-        left: 0;
+        transform: translateY(0);
+        /* ✅ เลื่อนลง */
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .nav-links>li {
@@ -1167,23 +1103,10 @@ section {
 .manual-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.manual-card {
-    background: var(--white);
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 24px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.manual-card:hover {
-    transform: translateY(-5px);
-    border: 1px solid var(--primary-blue);
-    box-shadow: 0 12px 25px rgba(0, 90, 156, 0.15);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .download-btn {
@@ -1357,15 +1280,6 @@ section {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.manual-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
 }
 
 .manual-card {
@@ -1598,16 +1512,12 @@ section {
 /* ส่วนของ Home / Hero Section */
 
 #home {
-    padding-top: 100px; /* ปรับตัวเลขนี้ตามความเหมาะสม (ปกติ Navbar สูงประมาณ 70-80px) */
+    padding-top: 100px;
+    /* ปรับตัวเลขนี้ตามความเหมาะสม (ปกติ Navbar สูงประมาณ 70-80px) */
     min-height: 100vh;
     display: flex;
-    align-items: center; /* ช่วยให้เนื้อหาอยู่กึ่งกลางแนวตั้ง */
-}
-
-/* ถ้ามีรูปพื้นหลัง ให้ใส่แบบนี้เพื่อให้รูปเต็มพอดี */
-.hero-container {
-    width: 100%;
-    /* ตกแต่งเพิ่มเติมตามต้องการ */
+    align-items: center;
+    /* ช่วยให้เนื้อหาอยู่กึ่งกลางแนวตั้ง */
 }
 
 /* --- ส่วนที่เพิ่มใหม่เพื่อแก้ปัญหาจอมือถือยาวเกินไป --- */
@@ -1693,6 +1603,7 @@ section {
         font-size: 18px !important;
     }
 }
+
 /* =========================================
    About Section - แก้ไขปัญหาหน้าล้นและจัด Layout
    ========================================= */
@@ -1703,7 +1614,8 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden; /* กันส่วนประกอบย่อยแลบออกข้าง */
+    overflow: hidden;
+    /* กันส่วนประกอบย่อยแลบออกข้าง */
 }
 
 .about-header {
@@ -1719,13 +1631,16 @@ section {
 
 .about-content {
     max-width: 950px;
-    width: 100%; /* บังคับให้กว้างพอดีจอ */
+    width: 100%;
+    /* บังคับให้กว้างพอดีจอ */
     margin: 0 auto;
     text-align: center;
-    padding: 0 15px; /* กันตัวหนังสือชิดขอบจอ */
+    padding: 0 15px;
+    /* กันตัวหนังสือชิดขอบจอ */
 }
 
-.about-p, .about-p-highlight {
+.about-p,
+.about-p-highlight {
     color: var(--text-gray);
     line-height: 1.8;
     margin-bottom: 25px;
@@ -1737,7 +1652,8 @@ section {
     display: flex;
     gap: 20px;
     justify-content: center;
-    flex-wrap: wrap; /* สำคัญ: ถ้าจอแคบ การ์ดจะลงมาเรียงแถวใหม่เอง */
+    flex-wrap: wrap;
+    /* สำคัญ: ถ้าจอแคบ การ์ดจะลงมาเรียงแถวใหม่เอง */
     margin-top: 40px;
     width: 100%;
 }
@@ -1747,9 +1663,10 @@ section {
     padding: 35px 25px;
     border-radius: 12px;
     flex: 1;
-    min-width: 280px; /* ป้องกันการ์ดแคบเกินไปจนอ่านไม่ออก */
+    min-width: 280px;
+    /* ป้องกันการ์ดแคบเกินไปจนอ่านไม่ออก */
     max-width: 450px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1786,9 +1703,11 @@ section {
         padding: 0;
     }
 
-    .about-p, .about-p-highlight {
+    .about-p,
+    .about-p-highlight {
         font-size: 16px !important;
-        text-align: justify; /* จัดให้อ่านง่ายขึ้นในพื้นที่แคบ */
+        text-align: justify;
+        /* จัดให้อ่านง่ายขึ้นในพื้นที่แคบ */
         hyphens: auto;
     }
 
@@ -1798,10 +1717,12 @@ section {
 
     .mission-card {
         flex: none;
-        width: 100%; /* การ์ดกว้างเต็มจอ */
+        width: 100%;
+        /* การ์ดกว้างเต็มจอ */
         min-width: 100%;
         padding: 25px 20px;
     }
+
     .section-title {
         font-size: 24px !important;
     }
@@ -1811,17 +1732,21 @@ section {
    Responsive สำหรับหน้าจอเล็กกว่า 480px
    ========================================= */
 @media (max-width: 480px) {
+
     /* 1. ปรับ Navbar ให้ประหยัดพื้นที่ */
     nav {
-        padding: 10px 15px; /* ลดความหนาของแถบเมนู */
+        padding: 10px 15px;
+        /* ลดความหนาของแถบเมนู */
     }
 
     .logo img {
-        height: 40px; /* ลดขนาดโลโก้ลงเล็กน้อย */
+        height: 40px;
+        /* ลดขนาดโลโก้ลงเล็กน้อย */
     }
 
     .logo-text {
-        font-size: 14px; /* ปรับชื่อบริษัทให้เล็กลง */
+        font-size: 14px;
+        /* ปรับชื่อบริษัทให้เล็กลง */
     }
 
     /* 2. ปรับ Hero Section (ส่วนหัวหน้าแรก) */
@@ -1831,45 +1756,54 @@ section {
     }
 
     .hero-text h1 {
-        font-size: 1.8rem; /* ลดขนาดหัวข้อไม่ให้ล้นจอ */
+        font-size: 1.8rem;
+        /* ลดขนาดหัวข้อไม่ให้ล้นจอ */
         line-height: 1.3;
     }
 
     .hero-text p {
-        font-size: 0.95rem; /* ปรับขนาดคำบรรยาย */
+        font-size: 0.95rem;
+        /* ปรับขนาดคำบรรยาย */
         margin-bottom: 25px;
     }
 
     .hero-actions {
-        flex-direction: column; /* วางปุ่มเรียงต่อกันในแนวตั้ง */
+        flex-direction: column;
+        /* วางปุ่มเรียงต่อกันในแนวตั้ง */
         width: 100%;
         gap: 10px;
     }
 
-    .btn-main, .btn-outline {
-        width: 100%; /* ให้ปุ่มกว้างเต็มจอเพื่อให้กดง่ายขึ้น */
+    .btn-main,
+    .btn-outline {
+        width: 100%;
+        /* ให้ปุ่มกว้างเต็มจอเพื่อให้กดง่ายขึ้น */
         padding: 12px 20px;
         text-align: center;
     }
 
     /* 3. ปรับขนาดส่วนเนื้อหาทั่วไป */
     section {
-        padding: 60px 15px 40px; /* ลด Padding ของแต่ละ Section */
+        padding: 60px 15px 40px;
+        /* ลด Padding ของแต่ละ Section */
     }
 
     .section-title {
-        font-size: 24px; /* ปรับหัวข้อ Section */
+        font-size: 24px;
+        /* ปรับหัวข้อ Section */
         margin-bottom: 30px;
     }
 
     /* 4. ปรับการแสดงผลการ์ดต่างๆ (Mission, Products) */
     .mission-card {
-        min-width: 100%; /* ให้การ์ดกว้างเต็มจอ */
+        min-width: 100%;
+        /* ให้การ์ดกว้างเต็มจอ */
         padding: 25px 15px;
     }
 
     .product-grid {
-        grid-template-columns: 1fr; /* บังคับให้เรียงแถวละ 1 ชิ้นเสมอ */
+        grid-template-columns: 1fr;
+        /* บังคับให้เรียงแถวละ 1 ชิ้นเสมอ */
         gap: 20px;
     }
 
@@ -1878,14 +1812,16 @@ section {
         gap: 30px;
     }
 
-    .contact-form-container input, 
+    .contact-form-container input,
     .contact-form-container textarea {
-        padding: 10px; /* ลดความเทอะทะของช่องกรอกข้อมูล */
+        padding: 10px;
+        /* ลดความเทอะทะของช่องกรอกข้อมูล */
     }
 
     /* 6. ปรับ Footer */
     .footer-top {
-        grid-template-columns: 1fr; /* ให้เมนู Footer เรียงต่อกันแนวตั้ง */
+        grid-template-columns: 1fr;
+        /* ให้เมนู Footer เรียงต่อกันแนวตั้ง */
         gap: 30px;
         text-align: center;
     }

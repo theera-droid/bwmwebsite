@@ -1807,3 +1807,90 @@ section {
     }
 }
 
+/* =========================================
+   Responsive สำหรับหน้าจอเล็กกว่า 480px
+   ========================================= */
+@media (max-width: 480px) {
+    /* 1. ปรับ Navbar ให้ประหยัดพื้นที่ */
+    nav {
+        padding: 10px 15px; /* ลดความหนาของแถบเมนู */
+    }
+
+    .logo img {
+        height: 40px; /* ลดขนาดโลโก้ลงเล็กน้อย */
+    }
+
+    .logo-text {
+        font-size: 14px; /* ปรับชื่อบริษัทให้เล็กลง */
+    }
+
+    /* 2. ปรับ Hero Section (ส่วนหัวหน้าแรก) */
+    .modern-hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* ลดขนาดหัวข้อไม่ให้ล้นจอ */
+        line-height: 1.3;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem; /* ปรับขนาดคำบรรยาย */
+        margin-bottom: 25px;
+    }
+
+    .hero-actions {
+        flex-direction: column; /* วางปุ่มเรียงต่อกันในแนวตั้ง */
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn-main, .btn-outline {
+        width: 100%; /* ให้ปุ่มกว้างเต็มจอเพื่อให้กดง่ายขึ้น */
+        padding: 12px 20px;
+        text-align: center;
+    }
+
+    /* 3. ปรับขนาดส่วนเนื้อหาทั่วไป */
+    section {
+        padding: 60px 15px 40px; /* ลด Padding ของแต่ละ Section */
+    }
+
+    .section-title {
+        font-size: 24px; /* ปรับหัวข้อ Section */
+        margin-bottom: 30px;
+    }
+
+    /* 4. ปรับการแสดงผลการ์ดต่างๆ (Mission, Products) */
+    .mission-card {
+        min-width: 100%; /* ให้การ์ดกว้างเต็มจอ */
+        padding: 25px 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* บังคับให้เรียงแถวละ 1 ชิ้นเสมอ */
+        gap: 20px;
+    }
+
+    /* 5. ปรับส่วนติดต่อเราและฟอร์ม */
+    .contact-container {
+        gap: 30px;
+    }
+
+    .contact-form-container input, 
+    .contact-form-container textarea {
+        padding: 10px; /* ลดความเทอะทะของช่องกรอกข้อมูล */
+    }
+
+    /* 6. ปรับ Footer */
+    .footer-top {
+        grid-template-columns: 1fr; /* ให้เมนู Footer เรียงต่อกันแนวตั้ง */
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-bottom-top {
+        text-align: center;
+    }
+}

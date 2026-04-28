@@ -31,7 +31,7 @@ nav {
     top: 0;
     width: 100%;
     background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,27 +40,27 @@ nav {
 }
 
 .logo img {
-    height: 50px; 
+    height: 50px;
     width: auto;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px; 
-    text-decoration: none; 
+    gap: 10px;
+    text-decoration: none;
 }
 
 .logo-text {
     font-size: 18px;
-    font-weight: 600; 
-    color: var(--primary-blue); 
+    font-weight: 600;
+    color: var(--primary-blue);
     letter-spacing: 0.5px;
 }
 
 @media (max-width: 480px) {
     .logo-text {
-        font-size: 16px; 
+        font-size: 16px;
     }
 }
 
@@ -88,13 +88,13 @@ nav {
 }
 
 .dropdown-menu {
-    display: none; 
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: var(--white);
-    min-width: 260px; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    min-width: 260px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     list-style: none;
     padding: 10px 0;
@@ -103,7 +103,7 @@ nav {
 }
 
 .nav-links .dropdown-menu li {
-    margin: 0; 
+    margin: 0;
 }
 
 .dropdown-menu a {
@@ -128,8 +128,15 @@ nav {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Hamburger Icon */
@@ -189,13 +196,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     /* นำรูปพื้นหลังเดิมของคุณกลับมาใช้ */
     background: linear-gradient(rgba(230, 240, 250, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
-    
+
     position: relative;
     overflow: hidden;
 }
+
 .hero-container {
     display: flex;
     align-items: center;
@@ -206,7 +214,12 @@ section {
     gap: 50px;
     z-index: 2;
 }
-.hero-text { flex: 1; text-align: left; }
+
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
 .hero-badge {
     display: inline-block;
     padding: 8px 16px;
@@ -217,83 +230,171 @@ section {
     font-weight: 500;
     margin-bottom: 20px;
 }
+
 .hero-text h1 {
     font-size: 3.2rem;
     line-height: 1.2;
     color: var(--text-dark);
     margin-bottom: 20px;
 }
+
 .text-gradient {
     background: linear-gradient(90deg, #005A9C, #00A3E0);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .hero-text p {
     font-size: 1.1rem;
     color: var(--text-gray);
     margin-bottom: 35px;
     line-height: 1.8;
 }
-.hero-actions { display: flex; gap: 15px; }
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
 .btn-main {
-    padding: 14px 30px; background: var(--primary-blue); color: white;
-    text-decoration: none; border-radius: 30px; font-weight: 500;
-    transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 90, 156, 0.2);
+    padding: 14px 30px;
+    background: var(--primary-blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 90, 156, 0.2);
 }
-.btn-main:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0, 90, 156, 0.4); }
+
+.btn-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 90, 156, 0.4);
+}
+
 .btn-outline {
-    padding: 14px 30px; background: transparent; color: var(--primary-blue);
-    text-decoration: none; border-radius: 30px; border: 2px solid var(--primary-blue);
-    font-weight: 500; transition: all 0.3s ease;
+    padding: 14px 30px;
+    background: transparent;
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2px solid var(--primary-blue);
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
-.btn-outline:hover { background: var(--light-blue); }
-.hero-graphic { flex: 1; display: flex; justify-content: center; align-items: center; }
+
+.btn-outline:hover {
+    background: var(--light-blue);
+}
+
+.hero-graphic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .glowing-circle {
-    width: 250px; height: 250px; background: var(--light-blue);
-    border-radius: 50%; display: flex; justify-content: center; align-items: center;
-    color: var(--primary-blue); box-shadow: 0 0 40px rgba(0, 163, 224, 0.3);
+    width: 250px;
+    height: 250px;
+    background: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-blue);
+    box-shadow: 0 0 40px rgba(0, 163, 224, 0.3);
     animation: float 4s ease-in-out infinite;
 }
+
 @keyframes float {
-    0% { transform: translateY(0px); box-shadow: 0 0 40px rgba(0, 163, 224, 0.3); }
-    50% { transform: translateY(-20px); box-shadow: 0 0 60px rgba(0, 163, 224, 0.5); }
-    100% { transform: translateY(0px); box-shadow: 0 0 40px rgba(0, 163, 224, 0.3); }
+    0% {
+        transform: translateY(0px);
+        box-shadow: 0 0 40px rgba(0, 163, 224, 0.3);
+    }
+
+    50% {
+        transform: translateY(-20px);
+        box-shadow: 0 0 60px rgba(0, 163, 224, 0.5);
+    }
+
+    100% {
+        transform: translateY(0px);
+        box-shadow: 0 0 40px rgba(0, 163, 224, 0.3);
+    }
 }
+
 @media (max-width: 768px) {
-    .hero-container { flex-direction: column; text-align: center; padding: 0 20px; }
-    .hero-text { text-align: center; }
-    .hero-text h1 { font-size: 2.2rem; }
-    .hero-actions { justify-content: center; }
-    .glowing-circle { width: 180px; height: 180px; margin-top: 30px; }
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .glowing-circle {
+        width: 180px;
+        height: 180px;
+        margin-top: 30px;
+    }
 }
+
 /* =========================================
    Logo ตรงกลางหน้าแรก
    ========================================= */
 .hero-logo {
-    width: 230px; /* ปรับขนาดความกว้างของโลโก้ได้ตามต้องการ */
+    width: 230px;
+    /* ปรับขนาดความกว้างของโลโก้ได้ตามต้องการ */
     height: auto;
-    margin: 0 auto 20px auto; /* จัดกึ่งกลางและเว้นระยะด้านล่าง */
+    margin: 0 auto 20px auto;
+    /* จัดกึ่งกลางและเว้นระยะด้านล่าง */
     display: block;
-    border-radius: 50%; /* โค้ดนี้จะทำให้รูปโลโก้กลม (ถ้าต้องการเป็นสี่เหลี่ยมเหมือนเดิมให้ลบบรรทัดนี้ออก) */
-    box-shadow: 0 10px 30px rgba(0, 90, 156, 0.2); /* เพิ่มเงาสีฟ้าอ่อนๆ ให้โลโก้โดดเด่น */
+    border-radius: 50%;
+    /* โค้ดนี้จะทำให้รูปโลโก้กลม (ถ้าต้องการเป็นสี่เหลี่ยมเหมือนเดิมให้ลบบรรทัดนี้ออก) */
+    box-shadow: 0 10px 30px rgba(0, 90, 156, 0.2);
+    /* เพิ่มเงาสีฟ้าอ่อนๆ ให้โลโก้โดดเด่น */
     transition: transform 0.3s ease;
 }
 
 .hero-logo:hover {
-    transform: scale(1.05); /* เอาเมาส์ชี้แล้วโลโก้ขยายขึ้นนิดนึง */
+    transform: scale(1.05);
+    /* เอาเมาส์ชี้แล้วโลโก้ขยายขึ้นนิดนึง */
 }
+
 /* =========================================
    อัปเดตเอฟเฟกต์การ์ดสินค้า (ให้เด้งและเงาสวยขึ้น)
    ========================================= */
-.product-card { transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.product-card {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 .product-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 90, 156, 0.1);
     border-color: var(--light-blue);
 }
-.product-card img, .product-icon { transition: transform 0.3s ease; }
-.product-card:hover .product-icon, .product-card:hover img { transform: scale(1.1); }
+
+.product-card img,
+.product-icon {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-icon,
+.product-card:hover img {
+    transform: scale(1.1);
+}
 
 /* =========================================
    Category Hero Section (ส่วนหัวของหน้าหมวดหมู่สินค้า เช่น Monitor)
@@ -304,7 +405,7 @@ section {
     padding-bottom: 50px;
     /* ไล่สีโทนน้ำเงินเข้มแบบหน้าหลัก + ลายเส้นชีพจรจางๆ */
     background-color: #003366;
-    background-image: 
+    background-image:
         linear-gradient(135deg, rgba(0, 30, 60, 0.9) 0%, rgba(0, 90, 156, 0.85) 100%),
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='100' viewBox='0 0 300 100'%3E%3Cpath d='M0 50 h60 l10 -20 l15 60 l20 -80 l15 60 l10 -20 h170' fill='none' stroke='rgba(255,255,255,0.06)' stroke-width='2' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E");
     background-size: cover, 400px auto;
@@ -314,7 +415,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
@@ -333,7 +434,7 @@ section {
     margin-bottom: 15px;
     font-weight: 600;
     letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 #category-hero p {
@@ -342,7 +443,7 @@ section {
     max-width: 600px;
     line-height: 1.6;
     font-weight: 300;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* =========================================
@@ -362,20 +463,26 @@ section {
 
 .product-card {
     background: var(--white);
-    border: 2px solid #eee; /* เส้นขอบปกติ */
+    border: 2px solid #eee;
+    /* เส้นขอบปกติ */
     border-radius: 12px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    transition: all 0.3s ease-in-out; /* ปรับเป็น all เพื่อให้ทุกการเปลี่ยนแปลงสมูท */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease-in-out;
+    /* ปรับเป็น all เพื่อให้ทุกการเปลี่ยนแปลงสมูท */
 }
 
 /* เมื่อเอาเมาส์ชี้ (Hover) */
 .product-card:hover {
-    transform: translateY(-6px); /* ยกลอยขึ้น */
-    border: 2px solid var(--primary-blue); /* เปลี่ยนกรอบเป็นสีน้ำเงินเข้ม */
-    box-shadow: 0 12px 25px rgba(0, 90, 156, 0.15); /* เพิ่มเงาสีน้ำเงินบางๆ */
-    background-color: #F8FBFF; /* เปลี่ยนพื้นหลังเป็นสีฟ้าอ่อนมากๆ ให้ดู Active */
+    transform: translateY(-6px);
+    /* ยกลอยขึ้น */
+    border: 2px solid var(--primary-blue);
+    /* เปลี่ยนกรอบเป็นสีน้ำเงินเข้ม */
+    box-shadow: 0 12px 25px rgba(0, 90, 156, 0.15);
+    /* เพิ่มเงาสีน้ำเงินบางๆ */
+    background-color: #F8FBFF;
+    /* เปลี่ยนพื้นหลังเป็นสีฟ้าอ่อนมากๆ ให้ดู Active */
 }
 
 /* ทำให้ข้อความ "รายละเอียดเพิ่มเติม" ด้านล่างเปลี่ยนสีตามตอน Hover ด้วย */
@@ -420,14 +527,16 @@ section {
     margin-bottom: 15px;
     border-radius: 8px;
     border-left: 4px solid var(--primary-blue);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    overflow: hidden; /* จำเป็นสำหรับซ่อนเนื้อหา Accordion */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    /* จำเป็นสำหรับซ่อนเนื้อหา Accordion */
     transition: all 0.3s ease;
 }
 
 .faq-item:hover {
     box-shadow: 0 6px 15px rgba(0, 90, 156, 0.1);
-    transform: translateY(-2px); /* ลอยขึ้นนิดๆ ตอนเอาเมาส์ชี้ */
+    transform: translateY(-2px);
+    /* ลอยขึ้นนิดๆ ตอนเอาเมาส์ชี้ */
 }
 
 /* ส่วนหัวที่กดได้ */
@@ -455,7 +564,8 @@ section {
     font-size: 24px;
     color: var(--primary-blue);
     font-weight: 400;
-    transition: transform 0.3s ease; /* เอฟเฟกต์หมุนไอคอน */
+    transition: transform 0.3s ease;
+    /* เอฟเฟกต์หมุนไอคอน */
 }
 
 /* ส่วนเนื้อหาคำตอบ (ค่าเริ่มต้นคือซ่อนไว้) */
@@ -472,13 +582,16 @@ section {
 /* คลาสที่จะถูกเพิ่มเข้ามาตอนกดคลิกเปิด */
 .faq-item.active .faq-content {
     padding: 0 20px 20px 20px;
-    max-height: 300px; /* ให้พื้นที่พอสำหรับคำตอบ */
+    max-height: 300px;
+    /* ให้พื้นที่พอสำหรับคำตอบ */
     opacity: 1;
 }
 
 .faq-item.active .faq-icon {
-    transform: rotate(45deg); /* หมุนเครื่องหมาย + เป็น x */
-    color: #ff4d4f; /* เปลี่ยนสีตอนเปิดเป็นสีแดง/เทาตามชอบ */
+    transform: rotate(45deg);
+    /* หมุนเครื่องหมาย + เป็น x */
+    color: #ff4d4f;
+    /* เปลี่ยนสีตอนเปิดเป็นสีแดง/เทาตามชอบ */
 }
 
 /* กล่อง CTA ติดต่อเราด้านล่าง */
@@ -503,6 +616,7 @@ section {
     color: var(--text-gray);
     margin-bottom: 20px;
 }
+
 /* =========================================
    Contact Section
    ========================================= */
@@ -518,19 +632,21 @@ section {
     flex-wrap: wrap;
 }
 
-.contact-info, .contact-form-container {
+.contact-info,
+.contact-form-container {
     flex: 1;
     min-width: 300px;
 }
 
 .contact-info p {
-    margin-bottom: 5px; 
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.contact-form-container input, .contact-form-container textarea {
+.contact-form-container input,
+.contact-form-container textarea {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
@@ -543,7 +659,7 @@ section {
    Footer (Fat Footer แบบใหม่)
    ========================================= */
 .site-footer {
-    background-color: #1c1c1c; 
+    background-color: #1c1c1c;
     color: #ffffff;
     padding: 60px 50px 30px;
     font-family: 'Prompt', sans-serif;
@@ -576,14 +692,14 @@ section {
 }
 
 .footer-col ul li a {
-    color: #a0a0a0; 
+    color: #a0a0a0;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s ease;
 }
 
 .footer-col ul li a:hover {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 .footer-bottom {
@@ -636,7 +752,7 @@ section {
     .site-footer {
         padding: 40px 20px 20px;
     }
-    
+
     .footer-bottom-top {
         flex-direction: column;
         align-items: flex-start;
@@ -647,14 +763,14 @@ section {
    Modal (ป๊อปอัปแสดงรายละเอียดสินค้า)
    ========================================= */
 .modal {
-    display: none; 
+    display: none;
     position: fixed;
     z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, 0.6);
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -667,15 +783,22 @@ section {
     width: 100%;
     padding: 30px;
     position: relative;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     animation: modalFadeIn 0.3s;
     max-height: 90vh;
     overflow-y: auto;
 }
 
 @keyframes modalFadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .close-modal {
@@ -738,43 +861,43 @@ section {
     nav {
         padding: 15px 20px;
     }
-    
+
     .hamburger {
-        display: flex; 
+        display: flex;
     }
 
     .nav-links {
         position: absolute;
-        top: 70px; 
-        left: -100%; 
+        top: 70px;
+        left: -100%;
         flex-direction: column;
         background-color: var(--white);
         width: 100%;
         text-align: left;
         transition: 0.3s;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
         padding: 0;
         gap: 0;
     }
 
     .nav-links.active {
-        left: 0; 
+        left: 0;
     }
 
-    .nav-links > li {
+    .nav-links>li {
         width: 100%;
         margin: 0;
     }
 
-    .nav-links > li > a {
+    .nav-links>li>a {
         display: block;
         padding: 15px 30px;
         border-bottom: 1px solid #f0f0f0;
     }
 
     .dropdown-menu {
-        display: none; 
-        position: static; 
+        display: none;
+        position: static;
         box-shadow: none;
         border: none;
         background-color: var(--bg-gray);
@@ -788,14 +911,14 @@ section {
         display: block;
     }
 
-    .dropdown > a {
+    .dropdown>a {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
     .dropdown-menu a {
-        padding: 15px 30px 15px 50px; 
+        padding: 15px 30px 15px 50px;
         border-bottom: 1px solid #e9e9e9;
         font-size: 14px;
     }
@@ -810,20 +933,24 @@ section {
     right: 30px;
     background-color: var(--primary-blue);
     color: var(--white);
-    
+
     /* แก้ไขตรงนี้: ทำให้เป็นวงกลม */
-    width: 60px;   /* กำหนดความกว้าง */
-    height: 60px;  /* กำหนดความสูงให้เท่ากัน */
-    padding: 0;    /* เอา padding เดิมออก */
-    border-radius: 50%; /* ทำให้เป็นวงกลม */
-    
+    width: 60px;
+    /* กำหนดความกว้าง */
+    height: 60px;
+    /* กำหนดความสูงให้เท่ากัน */
+    padding: 0;
+    /* เอา padding เดิมออก */
+    border-radius: 50%;
+    /* ทำให้เป็นวงกลม */
+
     /* จัดการไอคอนให้อยู่ตรงกลาง */
     display: flex;
     justify-content: center;
     align-items: center;
 
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 9999;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
@@ -831,23 +958,30 @@ section {
 /* จัดขนาดไอคอน SVG ให้พอดี */
 /* จัดขนาดไอคอน ion-icon ให้พอดี */
 .chat-widget-button ion-icon {
-    font-size: 30px;   /* ขนาดไอคอน */
-    color: var(--white); /* สีไอคอนเป็นสีขาว */
+    font-size: 30px;
+    /* ขนาดไอคอน */
+    color: var(--white);
+    /* สีไอคอนเป็นสีขาว */
 }
+
 .chat-widget-button:hover {
-    transform: translateY(-5px); /* ให้ลอยขึ้นนิดหน่อยเวลาชี้ */
-    background-color: #004578;   /* เปลี่ยนสีน้ำเงินให้เข้มขึ้น */
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25); /* เพิ่มเงาตอนชี้ */
+    transform: translateY(-5px);
+    /* ให้ลอยขึ้นนิดหน่อยเวลาชี้ */
+    background-color: #004578;
+    /* เปลี่ยนสีน้ำเงินให้เข้มขึ้น */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    /* เพิ่มเงาตอนชี้ */
 }
 
 .chat-widget-window {
     position: fixed;
-    bottom: 100px; /* ปรับให้สูงขึ้นนิดหน่อยเพื่อให้พ้นปุ่มวงกลม */
+    bottom: 100px;
+    /* ปรับให้สูงขึ้นนิดหน่อยเพื่อให้พ้นปุ่มวงกลม */
     right: 30px;
     width: 320px;
     background: var(--white);
     border-radius: 12px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
     display: none;
     flex-direction: column;
     overflow: hidden;
@@ -941,15 +1075,17 @@ section {
     .chat-widget-button {
         bottom: 20px;
         right: 20px;
-        width: 50px;  
+        width: 50px;
         height: 50px;
     }
+
     /* เปลี่ยนจาก .chat-widget-button svg เป็นบรรทัดล่างนี้ครับ */
     .chat-widget-button ion-icon {
-        font-size: 24px;  
+        font-size: 24px;
     }
+
     .chat-widget-window {
-        bottom: 80px; 
+        bottom: 80px;
         right: 15px;
         left: 15px;
         width: auto;
@@ -999,74 +1135,92 @@ section {
    ========================================= */
 .manual-section {
     max-width: 1000px;
-    margin: 100px auto 50px; 
+    margin: 100px auto 50px;
     padding: 20px;
 }
+
 .manual-header {
     text-align: center;
     margin-bottom: 40px;
 }
+
 .manual-header h1 {
-    color: var(--primary-blue); /* ดึงสีหลักมาใช้ */
+    color: var(--primary-blue);
+    /* ดึงสีหลักมาใช้ */
     font-size: 28px;
 }
+
 .manual-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
+
 .manual-card {
     background: var(--white);
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 24px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
+
 .manual-card:hover {
     transform: translateY(-5px);
     border: 1px solid var(--primary-blue);
     box-shadow: 0 12px 25px rgba(0, 90, 156, 0.15);
 }
+
 .download-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: var(--primary-blue); /* ดึงสีหลักมาใช้ */
+    background-color: var(--primary-blue);
+    /* ดึงสีหลักมาใช้ */
     color: var(--white);
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
     transition: background 0.3s;
 }
+
 .download-btn:hover {
-    background-color: #004578; /* สีเข้มขึ้นตอนเอาเมาส์ชี้ */
+    background-color: #004578;
+    /* สีเข้มขึ้นตอนเอาเมาส์ชี้ */
 }
+
 /* =========================================
    ปรับแต่งไอคอนติดต่อ (โทร, อีเมล, เวลาทำการ)
    ========================================= */
 .contact-info p {
     display: flex;
-    align-items: center; /* จัดให้ไอคอนกับข้อความอยู่กึ่งกลางบรรทัดเดียวกัน */
-    gap: 10px; /* ระยะห่างระหว่างไอคอนกับข้อความ */
+    align-items: center;
+    /* จัดให้ไอคอนกับข้อความอยู่กึ่งกลางบรรทัดเดียวกัน */
+    gap: 10px;
+    /* ระยะห่างระหว่างไอคอนกับข้อความ */
     margin-bottom: 15px;
 }
 
 .contact-info p ion-icon {
-    font-size: 24px; /* ขนาดของไอคอน */
-    color: var(--primary-blue); /* ใช้สีน้ำเงินหลักของเว็บ */
-    flex-shrink: 0; /* ป้องกันไม่ให้ไอคอนหดตัวถ้ายาวเกิน */
+    font-size: 24px;
+    /* ขนาดของไอคอน */
+    color: var(--primary-blue);
+    /* ใช้สีน้ำเงินหลักของเว็บ */
+    flex-shrink: 0;
+    /* ป้องกันไม่ให้ไอคอนหดตัวถ้ายาวเกิน */
 }
 
 /* ถ้าเอาไปใส่ใน Footer ด้วย ให้เพิ่มสีไอคอนใน Footer เป็นสีขาว/เทา */
-.footer-col ul li ion-icon, 
+.footer-col ul li ion-icon,
 .footer-contact-inline ion-icon {
     font-size: 20px;
-    color: #40C4FF; /* สีฟ้าสว่างเพื่อให้ตัดกับพื้นหลังสีดำของ Footer */
+    color: #40C4FF;
+    /* สีฟ้าสว่างเพื่อให้ตัดกับพื้นหลังสีดำของ Footer */
     vertical-align: middle;
     margin-right: 8px;
 }
+
 /* =========================================
    Chatbot Avatar Styles
    ========================================= */
@@ -1081,21 +1235,25 @@ section {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    overflow: hidden; /* บังคับตัดขอบให้กลมเนียน */
+    overflow: hidden;
+    /* บังคับตัดขอบให้กลมเนียน */
     flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--light-blue); /* สีพื้นหลังเผื่อรูปโปร่งใส */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--light-blue);
+    /* สีพื้นหลังเผื่อรูปโปร่งใส */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .bot-avatar img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* บังคับให้รูปขยายเต็มกรอบและอยู่กึ่งกลางพอดี */
+    object-fit: cover;
+    /* บังคับให้รูปขยายเต็มกรอบและอยู่กึ่งกลางพอดี */
     display: block;
 }
+
 /* =========================================
    ปุ่มติดต่อช่องทางต่างๆ ใน Chatbot
    ========================================= */
@@ -1110,13 +1268,13 @@ section {
     font-size: 13.5px;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .contact-link-btn:hover {
     opacity: 0.85;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* =========================================
@@ -1125,7 +1283,8 @@ section {
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 20px; /* ระยะห่างระหว่างปุ่มภาษากับแฮมเบอร์เกอร์ */
+    gap: 20px;
+    /* ระยะห่างระหว่างปุ่มภาษากับแฮมเบอร์เกอร์ */
 }
 
 .lang-switcher {
@@ -1138,7 +1297,8 @@ section {
 
 .lang-switcher a {
     text-decoration: none;
-    color: var(--text-gray); /* สีเทาสำหรับภาษาที่ไม่ได้เลือก */
+    color: var(--text-gray);
+    /* สีเทาสำหรับภาษาที่ไม่ได้เลือก */
     transition: color 0.3s ease;
 }
 
@@ -1152,7 +1312,8 @@ section {
 }
 
 .lang-switcher a.active {
-    color: var(--primary-blue); /* สีน้ำเงินสำหรับภาษาปัจจุบัน */
+    color: var(--primary-blue);
+    /* สีน้ำเงินสำหรับภาษาปัจจุบัน */
     font-weight: 600;
 }
 
@@ -1161,10 +1322,12 @@ section {
     .nav-actions {
         gap: 15px;
     }
+
     .lang-switcher {
         font-size: 14px;
     }
 }
+
 /* =========================================
    Manual Page (หน้าคู่มือการใช้งาน)
    ========================================= */
@@ -1179,7 +1342,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .manual-grid {
@@ -1196,7 +1359,7 @@ section {
     border-radius: 15px;
     padding: 35px 25px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--light-blue);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
@@ -1262,6 +1425,7 @@ section {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 90, 156, 0.2);
 }
+
 /* =========================================
    FAQ / Help Accordion (กรอบคลิกเปิด-ปิด)
    ========================================= */
@@ -1307,7 +1471,8 @@ section {
 }
 
 .faq-content {
-    max-height: 0; /* ซ่อนเนื้อหาไว้ตอนเริ่มต้น */
+    max-height: 0;
+    /* ซ่อนเนื้อหาไว้ตอนเริ่มต้น */
     overflow: hidden;
     padding: 0 20px;
     background-color: var(--bg-gray);
@@ -1317,21 +1482,25 @@ section {
 
 /* คลาส .active จะถูกเติมด้วย Javascript เมื่อคลิก */
 .faq-item.active .faq-content {
-    max-height: 500px; /* ความสูงสูงสุดเมื่อเปิด (ปรับเพิ่มได้ถ้าเนื้อหาเยอะ) */
+    max-height: 500px;
+    /* ความสูงสูงสุดเมื่อเปิด (ปรับเพิ่มได้ถ้าเนื้อหาเยอะ) */
     padding: 20px;
     opacity: 1;
     border-top: 1px solid var(--light-blue);
 }
 
 .faq-item.active .faq-icon {
-    transform: rotate(45deg); /* หมุนเครื่องหมาย + ให้กลายเป็น x */
+    transform: rotate(45deg);
+    /* หมุนเครื่องหมาย + ให้กลายเป็น x */
 }
+
 /* =========================================
    Manual Model List (รายการรุ่นในหน้าคู่มือ)
    ========================================= */
 .model-list {
     width: 100%;
-    margin-top: auto; /* ดันให้อยู่ด้านล่างสุดของการ์ด */
+    margin-top: auto;
+    /* ดันให้อยู่ด้านล่างสุดของการ์ด */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -1385,13 +1554,13 @@ section {
 
 /* สำหรับเมนูหลักบนแถบ Nav */
 /* คลาสที่จะถูกเติมเข้าไปเมื่อเลื่อนถึง Section นั้น */
-.nav-links > li > a.active-menu {
+.nav-links>li>a.active-menu {
     color: var(--primary-blue) !important;
     font-weight: 600 !important;
     position: relative;
 }
 
-.nav-links > li > a.active-menu::after {
+.nav-links>li>a.active-menu::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -1411,27 +1580,33 @@ section {
 
 /* =========================================
    Scroll-to-Top Button (ปุ่มเลื่อนขึ้นด้านบน)
-   ========================================= */ 
+   ========================================= */
 /* ส่วนของ Home / Hero Section */
 #home {
-    min-height: 100vh; /* ทำให้สูงอย่างน้อยเต็มหน้าจอพอดี */
+    min-height: 100vh;
+    /* ทำให้สูงอย่างน้อยเต็มหน้าจอพอดี */
     display: flex;
-    align-items: center;    /* จัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
-    justify-content: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวนอน */
-    padding-top: 80px;      /* เว้นระยะด้านบนหลบ Navbar (ปรับตามความสูงของ Nav คุณ) */
+    align-items: center;
+    /* จัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
+    justify-content: center;
+    /* จัดเนื้อหาให้อยู่กึ่งกลางแนวนอน */
+    padding-top: 80px;
+    /* เว้นระยะด้านบนหลบ Navbar (ปรับตามความสูงของ Nav คุณ) */
     box-sizing: border-box;
 }
 
 /* ถ้ามีรูปพื้นหลัง ให้ใส่แบบนี้เพื่อให้รูปเต็มพอดี */
-.hero-container { 
+.hero-container {
     width: 100%;
     /* ตกแต่งเพิ่มเติมตามต้องการ */
 }
+
 /* --- ส่วนที่เพิ่มใหม่เพื่อแก้ปัญหาจอมือถือยาวเกินไป --- */
 @media (max-width: 480px) {
+
     /* ปรับให้หน้า Product แสดง 2 คอลัมน์ */
     #products .product-grid {
-        grid-template-columns: repeat(2, 1fr) !important; 
+        grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
         padding: 0 10px;
     }
@@ -1439,7 +1614,8 @@ section {
     /* ปรับขนาดการ์ดสินค้าให้เล็กลงและกระชับขึ้น */
     #products .product-card {
         padding: 15px 10px !important;
-        min-width: unset !important; /* ปลดล็อกความกว้าง 300px เดิม */
+        min-width: unset !important;
+        /* ปลดล็อกความกว้าง 300px เดิม */
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -1461,7 +1637,8 @@ section {
     #products .product-card p {
         font-size: 12px !important;
         display: -webkit-box;
-        -webkit-line-clamp: 2; /* จำกัดบรรทัดคำอธิบายไม่ให้ยาวเกินไป */
+        -webkit-line-clamp: 2;
+        /* จำกัดบรรทัดคำอธิบายไม่ให้ยาวเกินไป */
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
@@ -1471,3 +1648,153 @@ section {
         padding: 50px 15px !important;
     }
 }
+
+/* แก้ไขเฉพาะส่วน #about บนมือถือ */
+/* จัดการส่วน About ให้สวยบนมือถือ */
+@media (max-width: 768px) {
+    #about {
+        padding: 50px 15px !important;
+        /* ลด padding รอบๆ */
+    }
+
+    #about .section-title {
+        font-size: 24px !important;
+        /* ลดขนาดหัวข้อบริษัท */
+    }
+
+    .about-p {
+        font-size: 16px !important;
+        /* ลดขนาดเนื้อหาให้อ่านง่ายพอดีจอ */
+        text-align: justify;
+        /* จัดให้ขอบซ้ายขวาตรงกัน */
+        text-indent: 2em;
+        /* เพิ่มระยะย่อหน้า */
+        text-align: left !important;
+        /* บังคับชิดซ้ายเพื่อให้เห็นรอยย่อหน้าชัดเจน */
+        padding: 0 10px;
+    }
+
+    .mission-card {
+        min-width: 100% !important;
+        /* บังคับให้การ์ดวิสัยทัศน์ซ้อนกันเป็นแนวตั้ง */
+        padding: 20px 15px !important;
+    }
+
+    .mission-card h4 {
+        font-size: 18px !important;
+    }
+}
+/* =========================================
+   About Section - แก้ไขปัญหาหน้าล้นและจัด Layout
+   ========================================= */
+
+#about {
+    background-color: var(--bg-gray);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* กันส่วนประกอบย่อยแลบออกข้าง */
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.about-icon {
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.about-content {
+    max-width: 950px;
+    width: 100%; /* บังคับให้กว้างพอดีจอ */
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 15px; /* กันตัวหนังสือชิดขอบจอ */
+}
+
+.about-p, .about-p-highlight {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+/* จัดการส่วน Vision & Mission */
+.mission-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* สำคัญ: ถ้าจอแคบ การ์ดจะลงมาเรียงแถวใหม่เอง */
+    margin-top: 40px;
+    width: 100%;
+}
+
+.mission-card {
+    background: var(--white);
+    padding: 35px 25px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 280px; /* ป้องกันการ์ดแคบเกินไปจนอ่านไม่ออก */
+    max-width: 450px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+}
+
+.mission-icon {
+    margin-bottom: 20px;
+}
+
+.mission-card h4 {
+    color: var(--primary-blue);
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.mission-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+/* ปรับแต่งสำหรับหน้าจอมือถือ (Responsive) */
+@media (max-width: 768px) {
+    #about {
+        padding: 60px 15px !important;
+    }
+
+    .about-content {
+        padding: 0;
+    }
+
+    .about-p, .about-p-highlight {
+        font-size: 16px !important;
+        text-align: justify; /* จัดให้อ่านง่ายขึ้นในพื้นที่แคบ */
+        hyphens: auto;
+    }
+
+    .mission-wrapper {
+        gap: 15px;
+    }
+
+    .mission-card {
+        flex: none;
+        width: 100%; /* การ์ดกว้างเต็มจอ */
+        min-width: 100%;
+        padding: 25px 20px;
+    }
+    .section-title {
+        font-size: 24px !important;
+    }
+}
+

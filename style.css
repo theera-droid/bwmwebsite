@@ -398,29 +398,111 @@ section {
 /* =========================================
    Help Center
    ========================================= */
+/* =========================================
+   Help Center (อัปเดตใหม่ให้ดูมีมิติ)
+   ========================================= */
 #help {
     background: var(--bg-gray);
+    /* เพิ่มลวดลายจุดบางๆ (Polka dot) ให้พื้นหลังไม่ดูโล่งเกินไป */
+    background-image: radial-gradient(#d5e5f5 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
 .help-container {
     max-width: 800px;
     width: 100%;
+    margin: 0 auto;
 }
 
+/* ดีไซน์กล่องคำถาม */
 .faq-item {
     background: var(--white);
     margin-bottom: 15px;
-    padding: 20px;
     border-radius: 8px;
     border-left: 4px solid var(--primary-blue);
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    overflow: hidden; /* จำเป็นสำหรับซ่อนเนื้อหา Accordion */
+    transition: all 0.3s ease;
 }
 
-.faq-item h4 {
-    margin-bottom: 10px;
+.faq-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 90, 156, 0.1);
+    transform: translateY(-2px); /* ลอยขึ้นนิดๆ ตอนเอาเมาส์ชี้ */
+}
+
+/* ส่วนหัวที่กดได้ */
+.faq-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.faq-header:hover {
+    background: #fcfcfc;
+}
+
+.faq-header h4 {
+    margin: 0;
     color: var(--text-dark);
+    font-weight: 500;
+    font-size: 16px;
 }
 
+.faq-icon {
+    font-size: 24px;
+    color: var(--primary-blue);
+    font-weight: 400;
+    transition: transform 0.3s ease; /* เอฟเฟกต์หมุนไอคอน */
+}
+
+/* ส่วนเนื้อหาคำตอบ (ค่าเริ่มต้นคือซ่อนไว้) */
+.faq-content {
+    padding: 0 20px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    color: var(--text-gray);
+    font-size: 15px;
+}
+
+/* คลาสที่จะถูกเพิ่มเข้ามาตอนกดคลิกเปิด */
+.faq-item.active .faq-content {
+    padding: 0 20px 20px 20px;
+    max-height: 300px; /* ให้พื้นที่พอสำหรับคำตอบ */
+    opacity: 1;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* หมุนเครื่องหมาย + เป็น x */
+    color: #ff4d4f; /* เปลี่ยนสีตอนเปิดเป็นสีแดง/เทาตามชอบ */
+}
+
+/* กล่อง CTA ติดต่อเราด้านล่าง */
+.help-cta {
+    max-width: 800px;
+    width: 100%;
+    margin: 50px auto 0;
+    background: var(--light-blue);
+    padding: 35px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px dashed rgba(0, 90, 156, 0.3);
+}
+
+.help-cta h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.help-cta p {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
 /* =========================================
    Contact Section
    ========================================= */
